@@ -48,7 +48,6 @@ BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 COMMON_GLOBAL_CFLAGS += -DHTC_TEGRA_AUDIO
 
 #Camera
-NVIDIA_CAMERA_BLOB := true #nvidia camera custom stuff
 USE_CAMERA_STUB := false # set to true by vendor
 BOARD_HAVE_HTC_FFC := true
 BOARD_CAMERA_HAVE_ISO := true
