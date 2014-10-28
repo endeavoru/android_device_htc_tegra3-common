@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#define NVIDIA_CAMERA_BLOB
+
 // FIXME: add well-defined names for cameras
 
 #ifndef ANDROID_INCLUDE_CAMERA_COMMON_H

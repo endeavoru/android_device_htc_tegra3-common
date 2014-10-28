@@ -42,7 +42,7 @@ static int camera_device_open(const hw_module_t* module, const char* name,
 static int camera_device_close(hw_device_t* device);
 static int camera_get_number_of_cameras(void);
 static int camera_get_camera_info(int camera_id, struct camera_info *info);
-static int camera_get_camera_info_extended(int camera_id, struct camera_info_extended *info);
+//static int camera_get_camera_info_extended(int camera_id, struct camera_info_extended *info);
 
 static struct hw_module_methods_t camera_module_methods = {
         open: camera_device_open
@@ -62,7 +62,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
     },
     get_number_of_cameras: camera_get_number_of_cameras,
     get_camera_info: camera_get_camera_info,
-    get_camera_info_extended: camera_get_camera_info_extended,
+    // get_camera_info_extended: camera_get_camera_info_extended,
 };
 
 typedef struct wrapper_camera_device {
@@ -537,7 +537,8 @@ int camera_set_custom_parameters(struct camera_device * device, const char *para
     log_parameters(params);
 #endif
 
-    int ret = VENDOR_CALL(device, set_custom_parameters, tmp);
+    //int ret = VENDOR_CALL(device, set_custom_parameters, tmp);
+    int ret = VENDOR_CALL(device, set_parameters, tmp);
     return ret;
 }
 
@@ -574,7 +575,8 @@ char* camera_get_custom_parameters(struct camera_device * device)
     if(!device)
         return NULL;
 
-    char* params = VENDOR_CALL(device, get_custom_parameters);
+    char* params = VENDOR_CALL(device, get_parameters);
+    // char* params = VENDOR_CALL(device, get_custom_parameters);
 
 #ifdef LOG_PARAMETERS
     log_parameters(params);
@@ -763,8 +765,8 @@ int camera_device_open(const hw_module_t* module, const char* name,
         //camera_ops->get_parameters = camera_get_parameters;
         camera_ops->set_parameters = camera_set_custom_parameters;
         camera_ops->get_parameters = camera_get_custom_parameters;
-        camera_ops->set_custom_parameters = camera_set_custom_parameters;
-        camera_ops->get_custom_parameters = camera_get_custom_parameters;
+        //camera_ops->set_custom_parameters = camera_set_custom_parameters;
+        //camera_ops->get_custom_parameters = camera_get_custom_parameters;
         camera_ops->put_parameters = camera_put_parameters;
         camera_ops->send_command = camera_send_command;
         camera_ops->release = camera_release;
@@ -804,10 +806,10 @@ int camera_get_camera_info(int camera_id, struct camera_info *info)
     return gVendorModule->get_camera_info(camera_id, info);
 }
 
-int camera_get_camera_info_extended(int camera_id, struct camera_info_extended *info)
+/*int camera_get_camera_info_extended(int camera_id, struct camera_info_extended *info)
 {
     ALOGV("%s", __FUNCTION__);
     if (check_vendor_module())
         return 0;
     return gVendorModule->get_camera_info_extended(camera_id, info);
-}
+}*/
