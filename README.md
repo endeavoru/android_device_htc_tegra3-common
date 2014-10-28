@@ -1,4 +1,4 @@
-Device configuration for the HTC enrc2b\evitareul (ONE X+'s')
+Device configuration for the HTC endeavoru (HTC One X)
 
 Copyright (C) 2013 The CyanogenMod Project
 
