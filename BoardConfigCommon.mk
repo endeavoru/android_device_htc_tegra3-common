@@ -107,6 +107,6 @@ BOARD_SEPOLICY_UNION := \
         rild.te \
         sensors_config.te \
         surfaceflinger.te \
-        system.te \
+        system_server.te \
         zygote.te
 
