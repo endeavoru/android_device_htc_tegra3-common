@@ -1,2 +1,3 @@
+# going against something in externel/sepolicy
+#allow init system_file:file execute_no_trans;
 allow init sysfs_devices_tegradc:file relabelto;
-allow init system_file:file execute_no_trans;

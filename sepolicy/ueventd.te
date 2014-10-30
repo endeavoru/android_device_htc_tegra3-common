@@ -1,3 +1,6 @@
+allow ueventd sysfs_devices_tegradc:file write;
 allow ueventd sysfs_devices_tegradc:dir relabelto;
 allow ueventd sysfs_devices_tegradc:file relabelto;
 allow ueventd sysfs_devices_tegradc:lnk_file relabelto;
+allow ueventd sysfs_devices_tegradc:file open;
+allow ueventd sysfs_devices_tegradc:file getattr;

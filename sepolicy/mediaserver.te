@@ -1,1 +1,2 @@
+allow mediaserver device:chr_file { read write };
 allow mediaserver { nvhost_writable_device nv_device nvhost_device }:chr_file rw_file_perms;
