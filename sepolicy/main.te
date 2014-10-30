@@ -1,0 +1,14 @@
+
+require {
+	type kernel;
+	type init;
+	type device;
+	type sysfs_devices_tegradc;
+	type surfaceflinger;
+	type ueventd;
+	type system_file;
+	class lnk_file relabelto;
+	class chr_file { read write };
+	class file { relabelto execute_no_trans };
+	class dir relabelto;
+}

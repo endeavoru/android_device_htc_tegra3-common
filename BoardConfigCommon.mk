@@ -98,15 +98,19 @@ BOARD_SEPOLICY_DIRS := \
 BOARD_SEPOLICY_UNION := \
         file_contexts \
         genfs_contexts \
+        main.te \
         app.te \
         btmacreader.te \
         device.te \
         drmserver.te \
+        init.te \
         init_shell.te \
+        kernel.te \
         file.te \
         rild.te \
         sensors_config.te \
         surfaceflinger.te \
         system_server.te \
+        ueventd.te \
         zygote.te
 

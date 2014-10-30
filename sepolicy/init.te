@@ -1,0 +1,2 @@
+allow init sysfs_devices_tegradc:file relabelto;
+allow init system_file:file execute_no_trans;
