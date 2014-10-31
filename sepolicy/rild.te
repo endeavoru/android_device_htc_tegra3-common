@@ -1,12 +1,21 @@
-#allow rild usbfs:filesystem mount;
+# TODO : remove/replace
+allow rild usbfs:filesystem mount;
+allow rild block_device:blk_file read;
+
 allow rild block_device:dir search;
 allow rild self:capability { dac_read_search dac_override };
 allow rild sysfs:file write;
 allow rild unlabeled:dir getattr;
 allow rild diag_device:chr_file rw_file_perms;
-#allow rild block_device:blk_file read;
 allow rild system_data_file:dir write;
 allow rild system_data_file:file write;
 allow rild unlabeled:dir { read search };
 allow rild system_data_file:dir { remove_name add_name };
 allow rild unlabeled:dir open;
+
+allow rild system_data_file:dir create;
+allow rild system_data_file:file unlink;
+allow rild unlabeled:file getattr;
+allow rild unlabeled:file read;
+
+allow rild unlabeled:file open;

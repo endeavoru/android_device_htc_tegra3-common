@@ -1,5 +1,6 @@
-# going against something in externel/sepolicy
-#allow surfaceflinger device:chr_file { read write };
+# TODO : remove/replace
+allow surfaceflinger device:chr_file { read write };
+
 allow surfaceflinger sysfs_devices_tegradc:dir search;
 allow surfaceflinger knv_device:chr_file rw_file_perms;
 allow surfaceflinger { sysfs_devices_system_cpu sysfs_devices_tegradc }:file w_file_perms;
@@ -8,3 +9,7 @@ allow surfaceflinger sysfs_devices_tegradc:file read;
 allow surfaceflinger debugfs:file read;
 allow surfaceflinger sysfs_devices_tegradc:file getattr;
 allow surfaceflinger system_data_file:dir write;
+allow surfaceflinger system_data_file:dir remove_name;
+allow surfaceflinger system_data_file:sock_file unlink;
+allow surfaceflinger system_data_file:dir add_name;
+allow surfaceflinger system_data_file:sock_file create;
