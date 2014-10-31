@@ -105,6 +105,7 @@ BOARD_SEPOLICY_UNION := \
         init.te \
         init_shell.te \
         kernel.te \
+        mediaserver.te \
         file.te \
         rild.te \
         sensors_config.te \
