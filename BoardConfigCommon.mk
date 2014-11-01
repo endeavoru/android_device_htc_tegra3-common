@@ -99,6 +99,7 @@ BOARD_SEPOLICY_UNION := \
         file_contexts \
         genfs_contexts \
         app.te \
+        bootanim.te \
         btmacreader.te \
         device.te \
         drmserver.te \

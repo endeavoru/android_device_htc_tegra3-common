@@ -5,11 +5,10 @@ allow rild block_device:blk_file { read open getattr };
 allow rild block_device:dir search;
 allow rild self:capability { dac_read_search dac_override };
 allow rild sysfs:file write;
-allow rild unlabeled:dir { getattr read search open write };
+allow rild unlabeled:dir { getattr read search open write add_name remove_name };
 allow rild diag_device:chr_file rw_file_perms;
 allow rild system_data_file:dir write;
 allow rild system_data_file:file { write unlink create };
 allow rild system_data_file:dir { remove_name add_name };
-
 allow rild system_data_file:dir create;
-allow rild unlabeled:file { read open getattr };
+allow rild unlabeled:file { read open getattr create write unlink };
